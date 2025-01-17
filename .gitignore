@@ -1,0 +1,13 @@
+node_modules
+
+/.cache
+/build
+.env
+/site
+/dist
+
+/app/component/defer.tsx
+/app/component/head.tsx
+/app/component/scripts.tsx
+
+COMMIT

@@ -1,0 +1,37 @@
+{
+	"include": [
+		"app/db.d.ts",
+		"global.d.ts",
+		"**/*.ts",
+		"**/*.tsx",
+		"**/.server/**/*.ts",
+		"**/.server/**/*.tsx",
+		"**/.client/**/*.ts",
+		"**/.client/**/*.tsx"
+	],
+	"exclude": [
+		"node_modules"
+	],
+	"compilerOptions": {
+		"lib": ["DOM", "DOM.Iterable", "ESNext", "webworker"],
+		"types": ["vite/client", "typed-htmx"],
+		"isolatedModules": true,
+		"esModuleInterop": true,
+		"jsx": "react-jsx",
+		"module": "ESNext",
+		"moduleResolution": "Bundler",
+		"resolveJsonModule": true,
+		"target": "ESNext",
+		"strict": true,
+		"allowJs": true,
+		"skipLibCheck": true,
+		"forceConsistentCasingInFileNames": true,
+		"baseUrl": ".",
+		"paths": {
+			"~/*": ["./app/*"]
+		},
+
+		// Vite takes care of building everything, not tsc.
+		"noEmit": true
+	}
+}
