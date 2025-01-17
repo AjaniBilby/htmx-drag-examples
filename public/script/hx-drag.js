@@ -66,9 +66,7 @@
 			|| drag.getAttribute("hx-drop-precedence")) === "drag";
 
 		const queue = dragFirst ? [drag, drop] : [drop, drag];
-		for (const elm of queue) {
-			await RunDragDrop(elm, elm === drag, dragVals, dropVals);
-		}
+		for (const elm of queue) await RunDragDrop(elm, elm === drag, dragVals, dropVals);
 
 		drag = null;
 	}
@@ -84,21 +82,23 @@
 	async function RunDragDrop(source, isDrag, dragVals, dropVals) {
 		if (!document.body.contains(source)) return;
 
-		let method, action, values;
+		let method, action, values, sync;
 		if (isDrag) {
-			method = source.getAttribute("hx-drag-method") || "PUT";
 			action = source.getAttribute("hx-drag");
+			sync   = source.getAttribute("hx-drag-sync")
+			method = source.getAttribute("hx-drag-method") || "PUT";
 			values = Object.assign({}, dropVals, dragVals);
 		} else {
-			method = source.getAttribute("hx-drop-method") || "PUT";
 			action = source.getAttribute("hx-drop");
+			sync   = source.getAttribute("hx-drop-sync")
+			method = source.getAttribute("hx-drop-method") || "PUT";
 			values = Object.assign({}, dragVals, dropVals);
 		}
 
 		if (action === "true") return;
 
 		const promise = htmx.ajax(method, action, { source, values });
-		if (source.getAttribute(isDrag ? "hx-drag-sync" : "hx-drop-sync") === "true") await promise;
+		if (sync) await promise;
 	}
 
 	htmx.defineExtension("hx-drag", {
