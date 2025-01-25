@@ -55,26 +55,26 @@ export async function loader() { // GET
 				hx-put=""
 			/>
 		</div>
-	</div>, { title: "Test" });
+	</div>, { title: "Order List" });
 }
 
 function Item(props: { item: { id: number, value: string } }) {
 	return <div
 		className="card"
+		hx-drop-action="?"
 		hx-drop-method="PATCH"
 		hx-drop-sync="true"
-		hx-drop=""
+		hx-drop={JSON.stringify({ drop: props.item.id })}
 		hx-target="this"
 		hx-swap="beforebegin"
-		hx-vals={JSON.stringify({ drop: props.item.id })}
 		hx-include="[name='hash']"
 	>
 		<div
 			id={`item-${props.item.id}`}
 			style={{ padding: ".5em", cursor: "grab" }}
-			hx-vals={JSON.stringify({ pickup: props.item.id })}
+			hx-drag={JSON.stringify({ pickup: props.item.id })}
 			hx-drag-method="GET"
-			hx-drag="/empty"
+			hx-drag-action="/empty"
 			hx-target="closest .card"
 			hx-swap="outerHTML"
 			draggable

@@ -21,7 +21,7 @@ export async function loader() { // GET
 
 		<p>Similarly the trash bin has no drop event, meant it's unaffected by things being dropped on it, however the items dragged to it are removed</p>
 
-		<div hx-ext="hx-drag" style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+		<div hx-ext="drag" style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
 			<div
 				className="card"
 				style={{ padding: "1em"}}
@@ -55,19 +55,18 @@ export async function loader() { // GET
 				<FontAwesomeIcon
 					style={{ height: "2em", color: "hsl(var(--muted-foreground))", padding: "1em" }}
 					icon={faTrash}
-					hx-drop="true"
+					hx-drop="{}"
 				/>
 			</div>
 		</div>
-	</div>, { title: "Test" });
+	</div>, { title: "Organise Buckets" });
 }
 
 function Animal(props: { name: string }) {
 	return <div
 		className="card"
 		style={{ padding: ".5em", cursor: "grab" }}
-		hx-vals={JSON.stringify(props)}
-		hx-drag="true"
+		hx-drag={JSON.stringify(props)}
 		draggable
 	>{props.name}</div>
 }
@@ -76,8 +75,8 @@ function Bucket(props: { name: string, children?: JSX.Element[] }) {
 	return <div
 		className="card"
 		style={{ padding: "1em", cursor: "grab" }}
-		hx-vals={JSON.stringify({ bucket: props.name})}
-		hx-drop=""
+		hx-drop={JSON.stringify({ bucket: props.name})}
+		hx-drop-action="?"
 		hx-target="find .list"
 		hx-swap="beforeend"
 	>
@@ -90,9 +89,9 @@ function Item(props: { name: string }) {
 	return <div
 		className="card"
 		style={{ padding: ".5em", cursor: "grab" }}
-		hx-vals={JSON.stringify(props)}
 		hx-drag-method="GET"
-		hx-drag="/empty"
+		hx-drag-action="/empty"
+		hx-drag={JSON.stringify(props)}
 		hx-target="this"
 		hx-swap="outerHTML"
 		draggable
@@ -110,6 +109,11 @@ export async function action({ request }: RouteContext) { // PUT / PATCH
 		console.log("moved", name, "to bucket", bucket);
 
 		return <Item name={name}/>;
+	}
+
+	if (request.method === "PATCH") {
+		const name = request.headers.get("hx-prompt") || "err";
+		return <Bucket name={name} />
 	}
 
 	if (request.method === "PATCH") {
