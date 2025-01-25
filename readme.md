@@ -38,7 +38,7 @@ This example simply has three different divs all of which have `hx-drag` and `hx
 There is a list of immutable animals at the top of the page, and user addable buckets below which animals can be dragged into, and out of, and deleted by dragging into the trash. In this example there is no server state, and all state is managed by the DOM.
 
 ![data-transfer example](https://github.com/AjaniBilby/htmx-drag-examples/blob/main/public/example/bucket.gif?raw)
-[source]([.](https://github.com/AjaniBilby/htmx-drag-examples/blob/main)/app/routes/bucket.tsx)
+[source](https://github.com/AjaniBilby/htmx-drag-examples/blob/main/app/routes/bucket.tsx)
 
 ### Example: Organise List
 
