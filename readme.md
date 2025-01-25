@@ -30,19 +30,19 @@ To run the examples, simply
 
 This example simply has three different divs all of which have `hx-drag` and `hx-drop` bindings to show how the value collisions hare handled.
 
-![data-transfer example](./public/example/data-transfer.gif)
-[source](./app/routes/data-transfer.tsx)
+![data-transfer example](https://github.com/AjaniBilby/htmx-drag-examples/blob/main/public/example/data-transfer.gif)
+[source](https://github.com/AjaniBilby/htmx-drag-examples/blob/main/app/routes/data-transfer.tsx)
 
 ### Example: Organise Buckets
 
 There is a list of immutable animals at the top of the page, and user addable buckets below which animals can be dragged into, and out of, and deleted by dragging into the trash. In this example there is no server state, and all state is managed by the DOM.
 
-![data-transfer example](./public/example/bucket.gif)
-[source](./app/routes/bucket.tsx)
+![data-transfer example](https://github.com/AjaniBilby/htmx-drag-examples/blob/main/public/example/bucket.gif?raw)
+[source]([.](https://github.com/AjaniBilby/htmx-drag-examples/blob/main)/app/routes/bucket.tsx)
 
 ### Example: Organise List
 
 This is the most extravagant example with server and client state, with sync detection. When you drag any item onto another, the dragged item will moved to before the dropped item. This example utilizes a `hx-include` and `hx-swap-oob` to use a hidden `<input name="hash">` value to detect when the client has gotten out of sync, in which case the server response with a `hx-location: ` header, forcing the client to reload the current page using `hx-boost` allowing it to resync with the server state.
 
-![data-transfer example](./public/example/list.gif)
-[source](./app/routes/list.tsx)
+![data-transfer example](https://github.com/AjaniBilby/htmx-drag-examples/blob/main/public/example/list.gif?raw)
+[source](https://github.com/AjaniBilby/htmx-drag-examples/blob/main/app/routes/list.tsx)

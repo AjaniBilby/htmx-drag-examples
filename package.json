@@ -1,4 +1,18 @@
 {
+	"name": "hx-drag",
+	"version": "1.0.0",
+	"description": "htmx drag & drop extension",
+	"keywords": ["htmx", "drag", "drop", "extension"],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/AjaniBilby/htmx-drag-examples"
+	},
+	"author": "Ajani Bilby",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/AjaniBilby/htmx-drag-examples/issues"
+	},
+
 	"type": "module",
 	"scripts": {
 		"prepare": "npx htmx-router",
@@ -11,6 +25,11 @@
 		"validate": "tsc --noEmit",
 		"preview": "cross-env NODE_ENV=production node ./server.js"
 	},
+	"files": [
+		"readme.md",
+		"hx-drag.js",
+		"package.json"
+	],
 	"devDependencies": {
 		"@fortawesome/free-solid-svg-icons": "^6.7.2",
 		"@fortawesome/react-fontawesome": "^0.2.2",
