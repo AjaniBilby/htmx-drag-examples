@@ -11,26 +11,24 @@
 		"validate": "tsc --noEmit",
 		"preview": "cross-env NODE_ENV=production node ./server.js"
 	},
-	"dependencies": {
+	"devDependencies": {
 		"@fortawesome/free-solid-svg-icons": "^6.7.2",
 		"@fortawesome/react-fontawesome": "^0.2.2",
+		"@types/express": "^5.0.0",
+		"@types/node": "^22.10.7",
+		"@types/react-dom": "^19.0.3",
+		"@types/react": "^19.0.7",
 		"chalk": "^5.4.1",
+		"cross-env": "^7.0.3",
 		"dotenv": "^16.4.7",
 		"express": "^4.21.2",
 		"htmx-router": "^1.0.3",
 		"morgan": "^1.10.0",
-		"react": "^19.0.0",
 		"react-dom": "^19.0.0",
+		"react": "^19.0.0",
 		"typed-htmx": "^0.3.1",
 		"typescript": "^5.7.3",
-		"vite": "^6.0.7",
-		"vite-tsconfig-paths": "^5.1.4"
-	},
-	"devDependencies": {
-		"@types/express": "^5.0.0",
-		"@types/node": "^22.10.7",
-		"@types/react": "^19.0.7",
-		"@types/react-dom": "^19.0.3",
-		"cross-env": "^7.0.3"
+		"vite-tsconfig-paths": "^5.1.4",
+		"vite": "^6.0.7"
 	}
 }

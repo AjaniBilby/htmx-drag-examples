@@ -1,15 +1,3 @@
-# hx-drag extension examples
-
-This repo is a set of examples of using the `hx-drag` extension proposal.
-
-To run the examples, simply
-  1. Install `npm i`
-  2. Start the server with `npm run dev`
-  3. Open [localhost:5173](http://localhost:5173)
-
-
-## Proposal
-
 Currently in htmx there are methods for enabling drag and drop behaviour for sorting elements using client side arrangement ([sorting example](https://htmx.org/examples/sortable/)). However this relies on client side execution, plus does not allow for more rich interactions like dragging an item from one group to another triggering a server side update.
 
 This extension uses two top-level `hx-` attributes, `hx-drag` and `hx-drop` to allow different information to be added to the request if the element was the one dragged or the one dropped. These two values are parsed identically to [`hx-vals`](https://htmx.org/attributes/hx-vals/) (without support for `js:` dynamic calculation), and are included with the requests issued by the drag and dropped elements.
@@ -20,6 +8,22 @@ The `hx-drag` requests will then be sent based on the `hx-[drag|drop]-action` on
 These two requests will include a merger of the `hx-drag` + `hx-drop` + `hx-vals` values. In the event of a conflict the current element's `hx-[drag|drop]` will override the secondary (so the `hx-drag` will override `hx-drop` values on the `hx-drag-action`).
 
 `hx-drag` intentionally does not rely on the `hx-[get|post|put|delete|patch]` attributes, to allow distinguishing between regular `hx-trigger` events, and the more detailed `hx-drag` requests.
+
+## Install
+
+```html
+<script src="https://unpkg.com/hx-drag@1.0.0/hx-drag.js"></script>
+```
+
+
+## Examples
+
+[This repo](https://github.com/AjaniBilby/htmx-drag-examples) is a set of examples of using the `hx-drag` extension proposal.
+
+To run the examples, simply
+  1. Install `npm i`
+  2. Start the server with `npm run dev`
+  3. Open [localhost:5173](http://localhost:5173)
 
 
 ### Example: Data-Transfer
