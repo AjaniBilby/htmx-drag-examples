@@ -14,7 +14,7 @@ Currently in htmx there are methods for enabling drag and drop behaviour for sor
 
 This extension uses two top-level `hx-` attributes, `hx-drag` and `hx-drop` to allow different information to be added to the request if the element was the one dragged or the one dropped. These two values are parsed identically to [`hx-vals`](https://htmx.org/attributes/hx-vals/) (without support for `js:` dynamic calculation), and are included with the requests issued by the drag and dropped elements.
 
-The requests created by the `hx-[drag|drop]` are only sent once both the `dragstart`, and `dragend` events have been completed.
+The requests created by the `hx-[drag|drop]` are only sent once both the `dragstart`, and `drop` events have been completed.
 The `hx-drag` requests will then be sent based on the `hx-[drag|drop]-action` on each element if present via a `PUT` method by default (this can be overridden with `hx-[drag|drop]-method`). By default these two requests are sent in parallel, but they can be made parallel via the use of `hx-[drag|drop]-sync=true`, and by default the `drag` request will be sent first, however this can be reversed with `hx-[drag|drop]precedence="drag"`.
 
 These two requests will include a merger of the `hx-drag` + `hx-drop` + `hx-vals` values. In the event of a conflict the current element's `hx-[drag|drop]` will override the secondary (so the `hx-drag` will override `hx-drop` values on the `hx-drag-action`).
