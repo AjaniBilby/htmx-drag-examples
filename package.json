@@ -1,17 +1,17 @@
 {
 	"name": "hx-drag",
-	"version": "1.0.0",
+	"version": "2.0.0",
 	"description": "htmx drag & drop extension",
 	"keywords": ["htmx", "drag", "drop", "extension"],
 	"main": "dist/index.min.js",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/AjaniBilby/htmx-drag-examples"
+		"url": "git+https://github.com/AjaniBilby/hx-drag"
 	},
 	"author": "Ajani Bilby",
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/AjaniBilby/htmx-drag-examples/issues"
+		"url": "https://github.com/AjaniBilby/hx-drag/issues"
 	},
 
 	"type": "module",
