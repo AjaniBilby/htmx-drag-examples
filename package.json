@@ -3,6 +3,7 @@
 	"version": "1.0.0",
 	"description": "htmx drag & drop extension",
 	"keywords": ["htmx", "drag", "drop", "extension"],
+	"main": "dist/index.min.js",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/AjaniBilby/htmx-drag-examples"
@@ -19,6 +20,7 @@
 		"prepare:routes": "npx htmx-router",
 		"dev": "node ./server.js",
 		"build": "run-s build:*",
+		"build:minify": "terser src/hx-drag.js --compress --mangle --output dist/index.min.js",
 		"build:router": "npx htmx-router",
 		"build:client": "vite build",
 		"build:server": "vite build --ssr app/entry.server.ts --outDir dist/server",
@@ -45,8 +47,9 @@
 		"morgan": "^1.10.0",
 		"react-dom": "^19.0.0",
 		"react": "^19.0.0",
+		"terser": "^5.39.0",
 		"typed-htmx": "^0.3.1",
-		"typescript": "^5.7.3",
+		"typescript": "^5.8.3",
 		"vite-tsconfig-paths": "^5.1.4",
 		"vite": "^6.0.7"
 	}
