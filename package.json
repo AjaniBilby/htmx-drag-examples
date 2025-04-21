@@ -13,6 +13,7 @@
 	"bugs": {
 		"url": "https://github.com/AjaniBilby/hx-drag/issues"
 	},
+	"homepage": "https://hx-drag.ajanibilby.com",
 
 	"type": "module",
 	"scripts": {
