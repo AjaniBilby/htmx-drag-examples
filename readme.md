@@ -14,8 +14,39 @@ These two requests will include a merger of the `hx-drag` + `hx-drop` + `hx-vals
 
 ## Install
 
+### CDN
+
 ```html
 <script src="https://unpkg.com/hx-drag@2.0.0"></script>
+```
+
+### Bundle
+
+To bundle in an npm-style build system with ES modules, you will have to add `htmx` to the `document` like so:
+
+```
+npm i hx-drag
+```
+
+```javascript
+// index.js
+import "./htmx";
+import "hx-drag";
+```
+
+```javascript
+// htmx.js
+import htmx from "htmx.org";
+window.htmx = htmx; // to support hx-drag
+export default htmx;
+```
+
+## Enable
+
+```html
+<body hx-ext="drag">
+    ...
+</body>
 ```
 
 ## Styling
