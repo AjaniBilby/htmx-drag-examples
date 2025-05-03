@@ -41,12 +41,6 @@ window.htmx = htmx; // to support hx-drag
 export default htmx;
 ```
 
-## Enable
-
-```html
-<body hx-ext="drag">...</body>
-```
-
 ## Styling
 
 When a `hx-drag` starts the class `hx-drag` will be added to the element, with `hx-drag-over` being added when you are hovering over a `hx-drop`, and then a `hx-drop` class is added when you finally drop the item. This can allow you to add styling to your preference for these drag events without any JS.
