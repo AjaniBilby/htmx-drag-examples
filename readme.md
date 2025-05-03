@@ -44,9 +44,7 @@ export default htmx;
 ## Enable
 
 ```html
-<body hx-ext="drag">
-    ...
-</body>
+<body hx-ext="drag">...</body>
 ```
 
 ## Styling
